@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Zubair - Clinical Psychologist</title>
+    <meta name="description" content="Professional online counseling services by Muhammad Zubair, specializing in emotional, relationship, and psychological issues for clients in Gulf countries, Pakistan, and India.">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        :root {
+            --primary: #2C5282;
+            --secondary: #718096;
+            --accent: #38B2AC;
+            --background: #F7FAFC;
+            --text: #2D3748;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4rem;
+        }
+
+        .logo {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 0.25rem;
+            text-decoration: none;
+            transition: background-color 0.2s;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .button:hover {
+            background: var(--accent);
+        }
+
+        .whatsapp-button {
+            background: #25D366;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 4rem;
+        }
+
+        .hero-content {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .pricing-table {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-table h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .price-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .price-item {
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.25rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-family: 'Merriweather', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--secondary);
+            max-width: 42rem;
+            margin: 0 auto 3rem;
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .card {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        label {
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        input, textarea, select {
+            padding: 0.75rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.25rem;
+            font-family: inherit;
+            width: 100%;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Social Media */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Certifications */
+        .cert-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .cert-card {
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .cert-card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+                gap: 2rem;
+                align-items: center;
+            }
+
+            .menu-button {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+            }
+        }
+
+        /* Added styles for video */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+                /* Add these new styles */
+                .price-section {
+            background: var(--background);
+            padding: 4rem 0;
+            border-radius: 1rem;
+            margin: 2rem 0;
+        }
+
+        .price-tier {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(113, 128, 150, 0.1);
+        }
+
+        .price-tier:hover {
+            transform: translateY(-5px);
+        }
+
+        .price-header {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-amount {
+            font-size: 2.5rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        .price-currency {
+            font-size: 1.2rem;
+            color: var(--secondary);
+        }
+
+        .price-features {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .price-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0;
+        }
+
+        .price-features i {
+            color: var(--accent);
+        }
+
+        /* Updated video container */
+        .video-container {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(44, 82, 130, 0.15);
+        }
+
+        /* Certification grid */
+        .cert-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+
+        .cert-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .cert-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .price-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .price-amount {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-content">
+            <a href="#" class="logo">Muhammad Zubair</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+                <a href="https://calendly.com/mzpakistani8" class="button" target="_blank">Book Session</a>
+            </div>
+            <button class="menu-button" onclick="toggleMenu()">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/923187036719" class="button whatsapp-button" target="_blank">
+        <i data-feather="message-circle"></i> Chat on WhatsApp
+    </a>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div>
+                <h1 class="section-title">Online Counseling Services</h1>
+                <p class="section-subtitle">Professional psychological support for emotional, relationship, and mental health concerns. Serving clients across Gulf countries, Pakistan, and India.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="https://calendly.com/mzpakistani8" class="button" target="_blank">Schedule Session</a>
+                    <a href="https://wa.me/923187036719" class="button" style="background: var(--accent);" target="_blank">Free Consultation</a>
+                </div>
+            </div>
+             <!-- Updated Video Section -->
+            <div class="video-container">
+                <iframe 
+                    src="https://drive.google.com/file/d/1dPrqdOKJYfLN86AZmFDaxiBnqHzv0Jmu/preview?autoplay=1" 
+                    allow="autoplay" 
+                    allowfullscreen
+                    muted
+                    style="border: none;">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+       <!-- Updated Pricing Section -->
+       <section id="pricing" class="price-section">
+        <div class="container">
+            <h2 class="section-title">Session Packages</h2>
+            <p class="section-subtitle">Flexible plans tailored to your needs</p>
+
+            <div class="card-grid">
+                <!-- Gulf Countries -->
+                <div class="price-tier">
+                    <div class="price-header">
+                        <h3>🌍 Gulf Countries</h3>
+                        <div class="price-amount">
+                            <span class="price-currency">From</span> AED 75
+                        </div>
+                    </div>
+                    <ul class="price-features">
+                        <li><i data-feather="check-circle"></i> 60-min Session</li>
+                        <li><i data-feather="check-circle"></i> Flexible Scheduling</li>
+                        <li><i data-feather="check-circle"></i> Multi-language Support</li>
+                    </ul>
+                    <a href="#contact" class="button">Choose Plan</a>
+                </div>
+
+                <!-- Package Deals -->
+                <div class="price-tier popular-tier">
+                    <div class="price-header">
+                        <h3>📦 Best Value</h3>
+                        <div class="price-amount">
+                            <span class="price-currency">Save 20%</span> AED 600
+                        </div>
+                    </div>
+                    <ul class="price-features">
+                        <li><i data-feather="check-circle"></i> 10 Sessions</li>
+                        <li><i data-feather="check-circle"></i> Priority Booking</li>
+                        <li><i data-feather="check-circle"></i> Free Resources</li>
+                    </ul>
+                    <a href="#contact" class="button">Choose Plan</a>
+                </div>
+
+                <!-- International -->
+                <div class="price-tier">
+                    <div class="price-header">
+                        <h3>🌐 International</h3>
+                        <div class="price-amount">
+                            <span class="price-currency">$20</span> USD
+                        </div>
+                    </div>
+                    <ul class="price-features">
+                        <li><i data-feather="check-circle"></i> Flexible Currency</li>
+                        <li><i data-feather="check-circle"></i> 24/7 Availability</li>
+                        <li><i data-feather="check-circle"></i> Secure Payments</li>
+                    </ul>
+                    <a href="#contact" class="button">Choose Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-white">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">Ready to start your journey to better mental health? Reach out today for a consultation.</p>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Contact Information</h3>
+                    <p><i data-feather="phone"></i> WhatsApp: +923187036719</p>
+                    <p><i data-feather="mail"></i> Email: mzpakistani8@gmail.com</p>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/%F0%9F%98%8A-muhammad-zubair-556444177/" target="_blank">
+                            <i data-feather="linkedin"></i>
+                        </a>
+                        <a href="https://www.facebook.com/psychologisthelp4648" target="_blank">
+                            <i data-feather="facebook"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <form class="contact-form" id="contactForm" onsubmit="submitForm(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="education">Education</label>
+                            <input type="text" id="education" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="job">Occupation</label>
+                            <input type="text" id="job" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp">WhatsApp Number</label>
+                            <input type="tel" id="whatsapp" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Updated Certifications Section -->
+        <section id="certifications">
+            <div class="container">
+                <h2 class="section-title">Certifications</h2>
+                <div class="cert-grid">
+                    <div class="cert-card">
+                        <img src="https://drive.google.com/uc?export=view&id=1LMqWYfosGX2rwiTzUsazWBKZ6HlxRm14" alt="Certification 1">
+                        <h4>Cognitive Behavioral Therapy</h4>
+                    </div>
+                    <div class="cert-card">
+                        <img src="https://drive.google.com/uc?export=view&id=1LClb87rrKCEW3uSpGMRt4VE3b0z1RlNw" alt="Certification 2">
+                        <h4>Clinical Psychology</h4>
+                    </div>
+                    <div class="cert-card">
+                        <img src="https://drive.google.com/uc?export=view&id=1LBsf0s0E8UuNtVFlkP_VPuZHsy016BMT" alt="Certification 3">
+                        <h4>Mental Health Practitioner</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="bg-white">
+        <div class="container">
+            <h2 class="section-title">Latest Articles</h2>
+            <p class="section-subtitle">Read my latest thoughts and insights on mental health</p>
+            <div class="blog-grid" id="blogGrid">
+                <!-- Blog posts will be added here -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Form Submission
+        function submitForm(event) {
+            event.preventDefault();
+            const formData = {
+                name: document.getElementById('name').value,
+                age: document.getElementById('age').value,
+                education: document.getElementById('education').value,
+                job: document.getElementById('job').value,
+                whatsapp: document.getElementById('whatsapp').value,
+                message: document.getElementById('message').value
+            };
+
+            // Here you would typically send this data to your server
+            console.log('Form submitted:', formData);
+            alert('Thank you for your message. I will contact you shortly on WhatsApp.');
+            event.target.reset();
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+           // Add feather icons for price features
+           feather.replace();
+        
+        // Add intersection observer for animation
+        const observers = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.price-tier, .cert-card').forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observers.observe(el);
+        });
+    </script>
+</body>
+</html>
